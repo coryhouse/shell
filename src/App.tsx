@@ -5,7 +5,7 @@ import { ShellApp } from "./components/ShellApp";
 const CounterAppOne = lazy(() => import("app1/CounterAppOne"));
 const CounterAppTwo = lazy(() => import("app2/CounterAppTwo"));
 
-export default function App() {
+export function App() {
   return (
     <Routes>
       <Route

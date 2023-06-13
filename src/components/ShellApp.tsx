@@ -8,7 +8,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
-import { Link as RouterLink } from "react-router-dom";
+import { Link, Link as RouterLink } from "react-router-dom";
 
 var version = process.env.BUILD_DATE;
 
@@ -20,7 +20,7 @@ type ShellAppProps = {
   CounterAppTwo: React.LazyExoticComponent<React.ComponentType<{}>>;
 };
 
-export const ShellApp = ({ CounterAppOne, CounterAppTwo }: ShellAppProps) => {
+export function ShellApp({ CounterAppOne, CounterAppTwo }: ShellAppProps) {
   const [count, setCount] = useState(0);
 
   return (
@@ -45,6 +45,7 @@ export const ShellApp = ({ CounterAppOne, CounterAppTwo }: ShellAppProps) => {
         backgroundColor="#6F60EA"
       >
         <Heading color="#fff">SHELL</Heading>
+        <Link to="/about">About Page</Link>
         <Text color="white">Shell click count: {count}</Text>
         <Button onClick={() => setCount((prevState) => prevState + 1)}>
           Click me
@@ -94,4 +95,4 @@ export const ShellApp = ({ CounterAppOne, CounterAppTwo }: ShellAppProps) => {
       </Flex>
     </Center>
   );
-};
+}

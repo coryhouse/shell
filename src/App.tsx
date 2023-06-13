@@ -20,6 +20,7 @@ export default function App() {
         />
         <Route path="app1/*" element={<CounterAppOne />} />
         <Route path="app2/*" element={<CounterAppTwo />} />
+        <Route path="about" element={<h1>About</h1>} />
       </Routes>
     </>
   );

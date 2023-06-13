@@ -7,22 +7,24 @@ import {
   Button,
   Text,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React, { ReactNode } from "react";
 import { Link, Link as RouterLink } from "react-router-dom";
 
 var version = process.env.BUILD_DATE;
 
-type ShellAppProps = {
-  CounterAppOne: React.LazyExoticComponent<
-    // Specify the props the remote accepts here
-    React.ComponentType<{ parentCount?: number }>
-  >;
-  CounterAppTwo: React.LazyExoticComponent<React.ComponentType<{}>>;
+type ShellLayoutProps = {
+  count: number;
+  setCount: React.Dispatch<React.SetStateAction<number>>;
+  RemoteOne: ReactNode;
+  RemoteTwo: ReactNode;
 };
 
-export function ShellApp({ CounterAppOne, CounterAppTwo }: ShellAppProps) {
-  const [count, setCount] = useState(0);
-
+export function ShellLayout({
+  count,
+  setCount,
+  RemoteOne,
+  RemoteTwo,
+}: ShellLayoutProps) {
   return (
     <Center
       height="100vh"
@@ -61,11 +63,11 @@ export function ShellApp({ CounterAppOne, CounterAppTwo }: ShellAppProps) {
               backgroundColor="#fff"
             >
               <Heading color="#6F60EA" mb="1rem">
-                APP 1
+                REMOTE 1
               </Heading>
-              <CounterAppOne parentCount={count} />
-              <Button mt="1rem" w="100%" to="/app1" as={RouterLink}>
-                To App 1
+              {RemoteOne}
+              <Button mt="1rem" w="100%" to="/remote1" as={RouterLink}>
+                To Remote 1
               </Button>
             </Box>
           </React.Suspense>
@@ -77,17 +79,17 @@ export function ShellApp({ CounterAppOne, CounterAppTwo }: ShellAppProps) {
               backgroundColor="#fff"
             >
               <Heading color="#6F60EA" mb="1rem">
-                APP 2
+                REMOTE 2
               </Heading>
-              <CounterAppTwo />
+              {RemoteTwo}
               <Button
                 mt="1rem"
                 w="100%"
                 alignSelf="center"
-                to="/app2"
+                to="/remote2"
                 as={RouterLink}
               >
-                To App 2
+                To Remote 2
               </Button>
             </Box>
           </React.Suspense>

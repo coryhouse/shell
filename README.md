@@ -7,6 +7,7 @@ This repo contains a shell that consumes 2 remotes in separate repos:
 
 ## TODO
 
+- [ ] Pass props to remotes
 - [ ] Dev workflow
 - [ ] Nav hook
 - [ ] Domain registry

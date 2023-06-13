@@ -6,8 +6,6 @@ import {
   Spinner,
   Button,
   Text,
-  Image,
-  Link,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { Link as RouterLink } from "react-router-dom";

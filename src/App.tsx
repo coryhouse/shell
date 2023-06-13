@@ -7,20 +7,18 @@ const CounterAppTwo = lazy(() => import("app2/CounterAppTwo"));
 
 export default function App() {
   return (
-    <>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <ShellApp
-              CounterAppOne={CounterAppOne}
-              CounterAppTwo={CounterAppTwo}
-            />
-          }
-        />
-        <Route path="app1/*" element={<CounterAppOne />} />
-        <Route path="app2/*" element={<CounterAppTwo />} />
-      </Routes>
-    </>
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <ShellApp
+            CounterAppOne={CounterAppOne}
+            CounterAppTwo={CounterAppTwo}
+          />
+        }
+      />
+      <Route path="app1/*" element={<CounterAppOne />} />
+      <Route path="app2/*" element={<CounterAppTwo />} />
+    </Routes>
   );
 }

@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "devDependencies": {
+    "@babel/core": "^7.22.5",
     "@babel/plugin-proposal-class-properties": "^7.16.7",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
@@ -11,6 +12,7 @@
     "@types/react": "^18.0.20",
     "@types/react-dom": "^18.0.6",
     "babel-loader": "^8.2.3",
+    "concurrently": "^8.2.0",
     "fork-ts-checker-webpack-plugin": "^7.2.1",
     "html-webpack-plugin": "5.3.1",
     "react-hot-loader": "^4.13.0",
@@ -22,7 +24,10 @@
     "webpack-dev-server": "^4.7.3"
   },
   "scripts": {
-    "start": "webpack serve",
+    "start:remote-1": "cd ../remote-1 && npm start",
+    "start:remote-2": "cd ../remote-2 && npm start",
+    "start:shell": "webpack serve",
+    "start": "concurrently npm:start:remote-1 npm:start:remote-2 npm:start:shell",
     "build": "webpack --mode production",
     "serve": "serve dist -p 3000",
     "clean": "rm -rf dist"

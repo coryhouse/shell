@@ -61,8 +61,12 @@ module.exports = (env, argv) => {
       new ModuleFederationPlugin({
         name: "container",
         remotes: {
-          app1: isProduction ? process.env.PROD_APP1 : process.env.DEV_APP1,
-          app2: isProduction ? process.env.PROD_APP2 : process.env.DEV_APP2,
+          remote1: isProduction
+            ? process.env.PROD_REMOTE1
+            : process.env.DEV_REMOTE1,
+          remote2: isProduction
+            ? process.env.PROD_REMOTE2
+            : process.env.DEV_REMOTE2,
         },
         shared: {
           ...deps,

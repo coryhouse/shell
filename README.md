@@ -1,25 +1,3 @@
+# Webpack 5 Module Federation with React
 
-```
-container
-├─ .gitignore
-├─ dist
-│  ├─ 581.js
-│  ├─ 581.js.LICENSE.txt
-│  ├─ index.html
-│  ├─ main.js
-│  └─ main.js.LICENSE.txt
-├─ package-lock.json
-├─ package.json
-├─ public
-│  ├─ index.dev.html
-│  └─ index.prod.html
-├─ src
-│  ├─ App.tsx
-│  ├─ bootstrap.tsx
-│  └─ index.ts
-├─ tsconfig.json
-├─ webpack.config.js
-├─ webpack.prod.js
-└─ yarn.lock
-
-```
+This repo contains a shell that consumes 2 remote components in these separate repos:

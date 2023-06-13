@@ -4,6 +4,8 @@ const { ModuleFederationPlugin } = webpack.container;
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 const deps = require("./package.json").dependencies;
 require("dotenv").config({ path: "./.env" });
+const BundleAnalyzerPlugin =
+  require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 const buildDate = new Date().toLocaleString();
 
@@ -58,6 +60,7 @@ module.exports = (env, argv) => {
       new webpack.DefinePlugin({
         "process.env": JSON.stringify(process.env),
       }),
+      new BundleAnalyzerPlugin(),
       new ModuleFederationPlugin({
         name: "container",
         remotes: {

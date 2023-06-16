@@ -10,7 +10,7 @@ import {
 import React, { ReactNode } from "react";
 import { Link, Link as RouterLink } from "react-router-dom";
 
-var version = process.env.BUILD_DATE;
+var buildDate = process.env.BUILD_DATE;
 
 type ShellLayoutProps = {
   count: number;
@@ -35,7 +35,7 @@ export function ShellLayout({
       flexDirection="column"
     >
       <Box color="#fff" position="fixed" right="0" top="0" mr="2rem" mt="2rem">
-        Latest Build Date: <Text fontWeight="bold">{version}</Text>
+        Build Date: <Text fontWeight="bold">{buildDate}</Text>
       </Box>
       <Flex
         border="1px solid #151421"

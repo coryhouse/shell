@@ -17,6 +17,7 @@
     "html-webpack-plugin": "5.5.3",
     "react-hot-loader": "^4.13.1",
     "serve": "14.2.0",
+    "surge": "^0.23.1",
     "ts-loader": "^9.1.2",
     "typescript": "^5.1.3",
     "webpack": "^5.86.0",
@@ -30,8 +31,10 @@
     "start:shell": "webpack serve",
     "start": "concurrently npm:start:remote-1 npm:start:remote-2 npm:start:shell",
     "build": "webpack --mode production",
+    "analyze": "cross-env ANALYZE=Y webpack --mode production",
     "serve": "serve dist -p 3000",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "deploy": "cd dist && surge --domain complete-quill.surge.sh"
   },
   "dependencies": {
     "@chakra-ui/react": "2.3.6",

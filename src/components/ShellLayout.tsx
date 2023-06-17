@@ -50,7 +50,7 @@ export function ShellLayout({
         <Link to="/about">About Page</Link>
         <Text color="white">Shell click count: {count}</Text>
         <Button onClick={() => setCount((prevState) => prevState + 1)}>
-          Click me
+          Increment shell count
         </Button>
         <br />
         <Flex direction="row" justifyContent="space-around">

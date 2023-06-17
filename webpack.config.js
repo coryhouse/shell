@@ -60,7 +60,7 @@ module.exports = (env, argv) => {
       new webpack.DefinePlugin({
         "process.env": JSON.stringify(process.env),
       }),
-      new BundleAnalyzerPlugin(),
+      ...(process.env.ANALYZE === "Y" ? [new BundleAnalyzerPlugin()] : []),
       new ModuleFederationPlugin({
         name: "container",
         remotes: {

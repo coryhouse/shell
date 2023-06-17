@@ -13,6 +13,7 @@
     "@types/react-dom": "^18.0.6",
     "babel-loader": "^8.2.3",
     "concurrently": "^8.2.0",
+    "cross-env": "^7.0.3",
     "fork-ts-checker-webpack-plugin": "^7.2.1",
     "html-webpack-plugin": "5.5.3",
     "react-hot-loader": "^4.13.1",
@@ -31,7 +32,7 @@
     "start:shell": "webpack serve",
     "start": "concurrently npm:start:remote-1 npm:start:remote-2 npm:start:shell",
     "build": "webpack --mode production",
-    "analyze": "cross-env ANALYZE=Y webpack --mode production",
+    "analyze": "cross-env ANALYZE=Y npm run build",
     "serve": "serve dist -p 3000",
     "clean": "rm -rf dist",
     "deploy": "cd dist && surge --domain complete-quill.surge.sh"

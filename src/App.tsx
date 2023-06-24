@@ -4,11 +4,12 @@ import { ShellLayout } from "./components/ShellLayout";
 import { Url, User } from "./types/types";
 
 // Lazy load remotes so the initial page load only loads immediately necessary remotes.
+// TODO: Improve types
 const RemoteOne = lazy(() => import("remote1/RemoteOne"));
 const RemoteTwo = lazy(() => import("remote2/RemoteTwo"));
 
 // TODO: Fetch these in real app.
-const urls: Url[] = [{ about: "/about", home: "/" }];
+const urls: Record<"about" | "home", string> = { about: "/about", home: "/" };
 const user: User = { id: 1, name: "John Doe" };
 
 export default function App() {
@@ -55,6 +56,7 @@ export default function App() {
           }
         />
         <Route path="about" element={<h1>About</h1>} />
+        <Route path="*" element={<h1>404 - Not Found</h1>} />
       </Routes>
     </>
   );

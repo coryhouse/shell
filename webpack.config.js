@@ -14,9 +14,15 @@ module.exports = (env, argv) => {
   return {
     entry: "./src/index.ts",
     mode: process.env.NODE_ENV || "development",
+    output: {
+      // Required for the historyApiFallback setting to work per https://ui.dev/react-router-cannot-get-url-refresh#webpack--development
+      publicPath: "/",
+    },
     devServer: {
       port: 3000,
       open: true,
+      // Redirect all requests to index.html so client-side routing works
+      historyApiFallback: true,
       headers: {
         "Access-Control-Allow-Origin": "*",
       },

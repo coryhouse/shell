@@ -17,8 +17,6 @@ export type Remote = {
   key: string;
   // The remote's root component
   rootComponent: string;
-  // The remote's entry point.
-  remoteEntryUrl: string;
 };
 
 // In the real app:
@@ -33,10 +31,6 @@ export const remotes: Remote[] = [
     key: "remote1",
     rootComponent: "RemoteOne",
     lazy: lazy(() => import("remote1/RemoteOne")),
-    remoteEntryUrl:
-      process.env.NODE_ENV === "production"
-        ? "remote1@https://spotted-list.surge.sh/remoteEntry.js"
-        : "remote1@http://localhost:3001/remoteEntry.js",
   },
   {
     navLink: {
@@ -46,10 +40,6 @@ export const remotes: Remote[] = [
     key: "remote2",
     rootComponent: "RemoteTwo",
     lazy: lazy(() => import("remote2/RemoteTwo")),
-    remoteEntryUrl:
-      process.env.NODE_ENV === "production"
-        ? "remote2@https://grey-whip.surge.sh/remoteEntry.js"
-        : "remote2@http://localhost:3002/remoteEntry.js",
   },
 ];
 

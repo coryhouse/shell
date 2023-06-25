@@ -38,11 +38,7 @@
     "deploy": "cd dist && surge --domain complete-quill.surge.sh"
   },
   "dependencies": {
-    "@chakra-ui/react": "2.3.6",
-    "@emotion/react": "^11.7.1",
-    "@emotion/styled": "^11.6.0",
     "dotenv": "^14.3.2",
-    "framer-motion": "^5.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.12.1"

@@ -71,7 +71,7 @@ module.exports = (env, argv) => {
       new ModuleFederationPlugin({
         name: "container",
         remotes: {
-          // TODO: Get this info from the shell DB.
+          // TODO: Fetch this info from the shell DB.
           remote1: isProduction
             ? "remote1@https://spotted-list.surge.sh/remoteEntry.js"
             : "remote1@http://localhost:3001/remoteEntry.js",

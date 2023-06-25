@@ -10,8 +10,6 @@ export type Remote = {
     text: string;
     // The URL path to assign to the remote.
     path: string;
-    // The order in which to display the link in the shell's navigation.
-    order: number;
   };
   // Lazy load remotes so the initial page load only loads the necessary remotes.
   lazy: React.LazyExoticComponent<React.ComponentType<RemoteProps>>;
@@ -31,7 +29,6 @@ export const remotes: Remote[] = [
     navLink: {
       text: "Remote 1",
       path: "/remote1",
-      order: 1,
     },
     key: "remote1",
     rootComponent: "RemoteOne",
@@ -45,7 +42,6 @@ export const remotes: Remote[] = [
     navLink: {
       text: "Remote 2",
       path: "/remote2",
-      order: 2,
     },
     key: "remote2",
     rootComponent: "RemoteTwo",

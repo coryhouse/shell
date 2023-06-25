@@ -23,7 +23,7 @@ export type Remote = {
 
 // In the real app:
 // 1. Fetch this info from the shell DB.
-// 2. Generate the array before startup so the lazy path is static.
+// 2. Generate this array before startup so the lazy path is static.
 export const remotes: Remote[] = [
   {
     navLink: {

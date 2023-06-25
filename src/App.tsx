@@ -39,12 +39,12 @@ export default function App() {
         <p>Shell Build Date: {buildDate}</p>
         <p>Shell count: {count}</p>
         <button onClick={() => setCount((count) => count + 1)}>
-          Increment shell counter
+          Increment shell count
         </button>
       </header>
 
       <Routes>
-        <Route path="/" element={<h1>Home Page</h1>} />
+        <Route path="/" element={<h2>Home Page</h2>} />
         <Route
           path="remote1/*"
           element={
@@ -71,8 +71,8 @@ export default function App() {
             </Suspense>
           }
         />
-        <Route path="about" element={<h1>About</h1>} />
-        <Route path="*" element={<h1>404 - Not Found</h1>} />
+        <Route path="about" element={<h2>About</h2>} />
+        <Route path="*" element={<h2>404 - Not Found</h2>} />
       </Routes>
     </>
   );

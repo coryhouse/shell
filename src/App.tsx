@@ -28,7 +28,7 @@ export default function App() {
               <Link to="/">Home</Link>
             </li>
             {remotes.map(({ navLink }) => (
-              <li key={navLink.path}>
+              <li key={navLink.text}>
                 <Link to={navLink.path}>{navLink.text}</Link>
               </li>
             ))}

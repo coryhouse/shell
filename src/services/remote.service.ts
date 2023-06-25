@@ -13,10 +13,6 @@ export type Remote = {
   };
   // Lazy load remotes so the initial page load only loads the necessary remotes.
   lazy: React.LazyExoticComponent<React.ComponentType<RemoteProps>>;
-  // Unique identifier for the remote. Used in webpack config and as the first segment of the import path.
-  key: string;
-  // The remote's root component
-  rootComponent: string;
 };
 
 // In the real app:
@@ -28,8 +24,6 @@ export const remotes: Remote[] = [
       text: "Remote 1",
       path: "/remote1",
     },
-    key: "remote1",
-    rootComponent: "RemoteOne",
     lazy: lazy(() => import("remote1/RemoteOne")),
   },
   {
@@ -37,8 +31,6 @@ export const remotes: Remote[] = [
       text: "Remote 2",
       path: "/remote2",
     },
-    key: "remote2",
-    rootComponent: "RemoteTwo",
     lazy: lazy(() => import("remote2/RemoteTwo")),
   },
 ];

@@ -1,7 +1,7 @@
 import React, { Suspense, lazy, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { ShellLayout } from "./components/ShellLayout";
-import { Url, User } from "./types/types";
+import { User } from "./types/types";
 
 // Lazy load remotes so the initial page load only loads immediately necessary remotes.
 // TODO: Improve types
@@ -26,12 +26,22 @@ export default function App() {
               setCount={setCount}
               RemoteOne={
                 <Suspense fallback="Loading...">
-                  <RemoteOne parentCount={count} urls={urls} user={user} />
+                  <RemoteOne
+                    parentCount={count}
+                    urls={urls}
+                    user={user}
+                    baseUrl="/remote1"
+                  />
                 </Suspense>
               }
               RemoteTwo={
                 <Suspense fallback="Loading...">
-                  <RemoteTwo parentCount={count} urls={urls} user={user} />
+                  <RemoteTwo
+                    parentCount={count}
+                    urls={urls}
+                    user={user}
+                    baseUrl="/remote2"
+                  />
                 </Suspense>
               }
             />
@@ -43,7 +53,12 @@ export default function App() {
           path="remote1/*"
           element={
             <Suspense fallback="Loading...">
-              <RemoteOne parentCount={count} urls={urls} user={user} />
+              <RemoteOne
+                parentCount={count}
+                urls={urls}
+                user={user}
+                baseUrl="/remote1"
+              />
             </Suspense>
           }
         />
@@ -51,7 +66,12 @@ export default function App() {
           path="remote2/*"
           element={
             <Suspense fallback="Loading...">
-              <RemoteTwo parentCount={count} urls={urls} user={user} />
+              <RemoteTwo
+                parentCount={count}
+                urls={urls}
+                user={user}
+                baseUrl="/remote2"
+              />
             </Suspense>
           }
         />

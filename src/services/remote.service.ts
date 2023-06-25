@@ -30,7 +30,7 @@ export const remotes: Remote[] = [
   {
     navLink: {
       text: "Remote 1",
-      path: "remote1",
+      path: "/remote1",
       order: 1,
     },
     key: "remote1",

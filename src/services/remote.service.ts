@@ -6,12 +6,12 @@ import { RemoteProps } from "src/types/types";
 export type Remote = {
   /** The link to the remote to display in the shell's navigation. */
   navLink: {
-    // The text to display in the link.
+    /** The text to display in the link. */
     text: string;
-    // The URL path to assign to the remote.
+    /** The URL path to assign to the remote. */
     path: string;
   };
-  // Lazy load remotes so the initial page load only loads the necessary remotes.
+  /** Lazy load remotes via a call to React.lazy so the shell can load remotes on demand. */
   lazy: React.LazyExoticComponent<React.ComponentType<RemoteProps>>;
 };
 

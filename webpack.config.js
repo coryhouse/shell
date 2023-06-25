@@ -11,6 +11,7 @@ const buildDate = new Date().toLocaleString();
 
 module.exports = (env, argv) => {
   const isProduction = argv.mode === "production";
+
   return {
     entry: "./src/index.ts",
     mode: process.env.NODE_ENV || "development",
@@ -70,12 +71,13 @@ module.exports = (env, argv) => {
       new ModuleFederationPlugin({
         name: "container",
         remotes: {
+          // TODO: Read from remotes service instead.
           remote1: isProduction
-            ? process.env.PROD_REMOTE1
-            : process.env.DEV_REMOTE1,
+            ? "remote1@https://spotted-list.surge.sh/remoteEntry.js"
+            : "remote1@http://localhost:3001/remoteEntry.js",
           remote2: isProduction
-            ? process.env.PROD_REMOTE2
-            : process.env.DEV_REMOTE2,
+            ? "remote2@https://grey-whip.surge.sh/remoteEntry.js"
+            : "remote2@http://localhost:3002/remoteEntry.js",
         },
         shared: {
           ...deps,

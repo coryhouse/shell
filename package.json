@@ -38,7 +38,7 @@
     "deploy": "npm run build && cd dist && surge --domain complete-quill.surge.sh",
     "deploy:remote-1": "cd ../remote-1 && npm run deploy",
     "deploy:remote-2": "cd ../remote-2 && npm run deploy",
-    "deploy-all": "concurrently npm:deploy npm:deploy:remote-1 npm:deploy:remote-2"
+    "deploy-all": "concurrently -g npm:deploy npm:deploy:remote-1 npm:deploy:remote-2"
   },
   "dependencies": {
     "dotenv": "^14.3.2",

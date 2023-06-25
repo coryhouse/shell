@@ -1,20 +1,23 @@
-import React, { Suspense, lazy, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import { User } from "./types/types";
-
-// Lazy load remotes so the initial page load only loads immediately necessary remotes.
-// TODO: Improve types
-const RemoteOne = lazy(() => import("remote1/RemoteOne"));
-const RemoteTwo = lazy(() => import("remote2/RemoteTwo"));
+import { remotes } from "./services/remote.service";
+import { getUser } from "./services/user.service";
 
 // TODO: Fetch these in real app.
 const urls: Record<"about" | "home", string> = { about: "/about", home: "/" };
-const user: User = { id: 1, name: "John Doe" };
 
 var buildDate = process.env.BUILD_DATE;
 
 export default function App() {
   const [count, setCount] = useState(0);
+  const [user, setUser] = useState<User | null>(null);
+
+  useEffect(() => {
+    getUser().then((user) => setUser(user));
+  }, []);
+
+  if (!user) return <h1>Loading...</h1>;
 
   return (
     <>
@@ -24,12 +27,11 @@ export default function App() {
             <li>
               <Link to="/">Home</Link>
             </li>
-            <li>
-              <Link to="/remote1">Remote 1</Link>
-            </li>
-            <li>
-              <Link to="/remote2">Remote 2</Link>
-            </li>
+            {remotes.map(({ navLink }) => (
+              <li key={navLink.path}>
+                <Link to={navLink.path}>{navLink.text}</Link>
+              </li>
+            ))}
             <li>
               <Link to="/about">About</Link>
             </li>
@@ -45,33 +47,26 @@ export default function App() {
 
       <Routes>
         <Route path="/" element={<h2>Home Page</h2>} />
-        <Route
-          path="remote1/*"
-          element={
-            <Suspense fallback="Loading...">
-              <RemoteOne
-                parentCount={count}
-                urls={urls}
-                user={user}
-                baseUrl="/remote1"
-              />
-            </Suspense>
-          }
-        />
-        <Route
-          path="remote2/*"
-          element={
-            <Suspense fallback="Loading...">
-              <RemoteTwo
-                parentCount={count}
-                urls={urls}
-                user={user}
-                baseUrl="/remote2"
-              />
-            </Suspense>
-          }
-        />
         <Route path="about" element={<h2>About</h2>} />
+        {remotes.map(({ navLink, lazy }) => {
+          const LazyRemote = lazy;
+          return (
+            <Route
+              key={navLink.path}
+              path={navLink.path + "/*"}
+              element={
+                <Suspense fallback="Loading...">
+                  <LazyRemote
+                    parentCount={count}
+                    urls={urls}
+                    user={user}
+                    baseUrl={navLink.path}
+                  />
+                </Suspense>
+              }
+            />
+          );
+        })}
         <Route path="*" element={<h2>404 - Not Found</h2>} />
       </Routes>
     </>

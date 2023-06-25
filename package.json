@@ -35,7 +35,10 @@
     "build": "webpack --mode production && cd dist && cp index.html 200.html",
     "analyze": "cross-env ANALYZE=Y npm run build",
     "clean": "rm -rf dist",
-    "deploy": "cd dist && surge --domain complete-quill.surge.sh"
+    "deploy": "npm run build && cd dist && surge --domain complete-quill.surge.sh",
+    "deploy:remote-1": "cd ../remote-1 && npm run deploy",
+    "deploy:remote-2": "cd ../remote-2 && npm run deploy",
+    "deploy-all": "concurrently npm:deploy npm:deploy:remote-1 npm:deploy:remote-2"
   },
   "dependencies": {
     "dotenv": "^14.3.2",

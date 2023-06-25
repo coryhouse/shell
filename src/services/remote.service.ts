@@ -34,5 +34,3 @@ export const remotes: Remote[] = [
     lazy: lazy(() => import("remote2/RemoteTwo")),
   },
 ];
-
-// export async function getRemotes(): Promise<Remote[]> {}

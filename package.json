@@ -33,6 +33,7 @@
     "start": "concurrently npm:start:remote-1 npm:start:remote-2 npm:start:shell",
     "//build": "surge redirects all unmatched routes to 200.html, so copy index.html to 200.html to support client-side rendering of deep links.",
     "build": "webpack --mode production && cd dist && cp index.html 200.html",
+    "build:dev": "cross-env NODE_ENV=development webpack --config webpack.config.js",
     "analyze": "cross-env ANALYZE=Y npm run build",
     "clean": "rm -rf dist",
     "deploy": "npm run build && cd dist && surge --domain complete-quill.surge.sh",

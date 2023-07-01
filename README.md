@@ -15,6 +15,9 @@ This repo contains a shell that consumes 2 remotes in separate repos:
 
 ## TODO
 
+- [ ] Add account selector and show that different links displays for different accounts
+- [ ] Support running the remote without the shell displaying, but still pass the shell's props to the remote
+- [ ] Confirm passing a new prop doesn't break existing remotes
 - [ ] Extract lazy from config so it's just data and fetch before build
 - [ ] Convert webpack to TypeScript
 - [ ] Read remote config in webpack config

@@ -3,6 +3,7 @@
 export type RemoteProps = {
   baseUrl: string;
   parentCount: number;
+  account: string;
   urls: Url;
   user: User;
 };

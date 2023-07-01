@@ -12,6 +12,7 @@ var buildDate = process.env.BUILD_DATE;
 export default function App() {
   const [count, setCount] = useState(0);
   const [user, setUser] = useState<User | null>(null);
+  const [account, setAccount] = useState("account-one");
 
   useEffect(() => {
     getUser().then((user) => setUser(user));
@@ -38,6 +39,11 @@ export default function App() {
           </ul>
         </nav>
 
+        <select value={account} onChange={(e) => setAccount(e.target.value)}>
+          <option value="account-one">Account One</option>
+          <option value="account-two">Account Two</option>
+        </select>
+
         <p>Shell Build Date: {buildDate}</p>
         <p>Shell count: {count}</p>
         <button onClick={() => setCount((count) => count + 1)}>
@@ -58,6 +64,7 @@ export default function App() {
                 <Suspense fallback="Loading...">
                   <LazyRemote
                     parentCount={count}
+                    account={account}
                     urls={urls}
                     user={user}
                     baseUrl={navLink.path}

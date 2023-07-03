@@ -32,6 +32,13 @@ export function ShellLayout({
                 <Link to={navLink.path}>{navLink.text}</Link>
               </li>
             ))}
+            {account === "account-one" && (
+              <li>
+                <Link to="/">
+                  This link only displays when account-one is selected
+                </Link>
+              </li>
+            )}
             <li>
               <Link to="/about">About</Link>
             </li>

@@ -25,7 +25,7 @@ export function ShellRoutes({ count, account, urls, user }: RoutesProps) {
             element={
               <Suspense fallback="Loading...">
                 <LazyRemote
-                  parentCount={count}
+                  shellCount={count}
                   account={account}
                   urls={urls}
                   user={user}

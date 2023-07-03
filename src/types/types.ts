@@ -2,7 +2,7 @@
 // This is the API that the shell enforces on each remote.
 export type RemoteProps = {
   baseUrl: string;
-  parentCount: number;
+  shellCount: number;
   account: string;
   urls: Url;
   user: User;

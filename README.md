@@ -13,10 +13,17 @@ This repo contains a shell that consumes 2 remotes in separate repos:
 
 1. Show release flow with breaking changes
 
-## TODO
+## Ready to Demo
 
 - [ ] Demo - Show that passing a new prop doesn't break existing remotes (I've already proven this works fine)
 - [ ] Add account selector and show that different links displays for different accounts
+- [ ] Reusable ShellContext for running remotes in isolation.
+
+## TODO
+
+- [ ] Show error fallback working when throwing error in remote
+- [ ] [Handle a remote failing elegantly](https://github.com/coryhouse/shell/issues/1)
+- [ ] Show error reset working
 - [ ] Support running the remote without the shell displaying, but still pass the shell's props to the remote
 - [ ] Extract lazy from config so it's just data and fetch before build
 - [ ] Convert webpack config to TypeScript

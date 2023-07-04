@@ -19,15 +19,13 @@ export default function App() {
   if (!user) return <h1>Loading...</h1>;
 
   return (
-    <>
-      <ShellLayout
-        account={account}
-        setAccount={setAccount}
-        count={count}
-        setCount={setCount}
-      >
-        <ShellRoutes account={account} count={count} urls={urls} user={user} />
-      </ShellLayout>
-    </>
+    <ShellLayout
+      account={account}
+      setAccount={setAccount}
+      count={count}
+      setCount={setCount}
+    >
+      <ShellRoutes account={account} count={count} urls={urls} user={user} />
+    </ShellLayout>
   );
 }

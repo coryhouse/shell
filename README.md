@@ -20,11 +20,11 @@ This repo contains a shell that consumes 2 remotes in separate repos:
 - [ ] Reusable ShellContext for running remotes in isolation.
 - [ ] Show shell error fallback working when throwing error in remote 1
 - [ ] Show custom error fallback working when throwing in remote 2.
+- [ ] Show error reset working
 
 ## TODO
 
 - [ ] [Handle a remote failing elegantly](https://github.com/coryhouse/shell/issues/1)
-- [ ] Show error reset working
 - [ ] Support running the remote without the shell displaying, but still pass the shell's props to the remote
 - [ ] Extract lazy from config so it's just data and fetch before build
 - [ ] Convert webpack config to TypeScript

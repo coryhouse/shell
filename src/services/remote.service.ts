@@ -24,13 +24,13 @@ export const remotes: Remote[] = [
       text: "Remote 1",
       path: "/remote1",
     },
-    lazy: lazy(() => import("remote1/RemoteOne")),
+    lazy: lazy(() => import("remote1/remote1")),
   },
   {
     navLink: {
       text: "Remote 2",
       path: "/remote2",
     },
-    lazy: lazy(() => import("remote2/RemoteTwo")),
+    lazy: lazy(() => import("remote2/remote2")),
   },
 ];

@@ -5,6 +5,7 @@
   "devDependencies": {
     "@babel/core": "^7.22.5",
     "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@babel/plugin-transform-runtime": "^7.22.5",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
     "@babel/preset-typescript": "^7.16.7",
@@ -33,6 +34,7 @@
     "start": "concurrently npm:start:remote-1 npm:start:remote-2 npm:start:shell",
     "//build": "surge redirects all unmatched routes to 200.html, so copy index.html to 200.html to support client-side rendering of deep links.",
     "build": "webpack --mode production && cd dist && cp index.html 200.html",
+    "build:dev": "cross-env NODE_ENV=development webpack --config webpack.config.js",
     "analyze": "cross-env ANALYZE=Y npm run build",
     "clean": "rm -rf dist",
     "deploy": "npm run build && cd dist && surge --domain complete-quill.surge.sh",
@@ -46,5 +48,8 @@
     "react-dom": "^18.2.0",
     "react-error-boundary": "^4.0.10",
     "react-router-dom": "^6.12.1"
-  }
+  },
+  "browserslist": [
+    "last 2 Chrome versions"
+  ]
 }

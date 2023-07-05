@@ -73,10 +73,10 @@ module.exports = (env, argv) => {
         remotes: {
           // TODO: Fetch this info from the shell DB.
           remote1: isProduction
-            ? "remote1@https://spotted-list.surge.sh/remoteEntry.js"
+            ? "remote1@http://apps.nov4.io/remote1/remoteEntry.js"
             : "remote1@http://localhost:3001/remoteEntry.js",
           remote2: isProduction
-            ? "remote2@https://grey-whip.surge.sh/remoteEntry.js"
+            ? "remote2@http://apps.nov4.io/remote2/remoteEntry.js"
             : "remote2@http://localhost:3002/remoteEntry.js",
         },
         shared: {

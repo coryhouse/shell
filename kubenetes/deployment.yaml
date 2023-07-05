@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: portal-shell
+  name: portal-shell
+  namespace: client-webapps
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: portal-shell
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: portal-shell
+    spec:
+      containers:
+        - image: n4acr.azurecr.io/dev/shell:latest
+          name: shell
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+          resources:
+            limits:
+              cpu: 100m
+              memory: 128Mi
+            requests:
+              cpu: 100m
+              memory: 128Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: portal-shell
+  name: portal-shell-svc
+  namespace: client-webapps
+spec:
+  selector:
+    app: portal-shell
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: 8080
+      protocol: TCP

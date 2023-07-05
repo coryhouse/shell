@@ -1,0 +1,35 @@
+# Stage 1: Build stage
+FROM node:18-alpine as build
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy package.json and package-lock.json to the working directory
+COPY package.json package-lock.json ./
+
+# Install dependencies
+RUN npm install --legacy-peer-deps
+
+# Copy the entire project to the working directory
+COPY . .
+
+# Build the project
+RUN npm run build
+
+# Stage 2: Release stage
+FROM abdennour/nginx-distroless-unprivileged as release
+
+# Set the working directory inside the container
+WORKDIR /opt/app
+
+# Copy NGINX configuration files to the appropriate directory
+COPY --chown=1001:0 ./config /etc/nginx/conf.d
+
+# Copy the built project from the build stage to the release stage
+COPY --from=build --chown=1001:0 /app/dist/. .
+
+# Expose the port that NGINX will listen on
+EXPOSE 8080
+
+# Set the user to run NGINX as a non-root user
+USER 1001

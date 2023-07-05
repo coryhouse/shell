@@ -5,6 +5,7 @@
   "devDependencies": {
     "@babel/core": "^7.22.5",
     "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@babel/plugin-transform-runtime": "^7.22.5",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
     "@babel/preset-typescript": "^7.16.7",
@@ -46,5 +47,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.12.1"
-  }
+  },
+  "browserslist": [
+    "last 2 Chrome versions"
+  ]
 }

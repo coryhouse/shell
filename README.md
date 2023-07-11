@@ -13,19 +13,31 @@ This repo contains a shell that consumes 2 remotes in separate repos:
 
 1. Show release flow with breaking changes
 
-## Ready to Demo
+## Already Demo'd
 
-- [ ] Demo - Show that passing a new prop doesn't break existing remotes (I've already proven this works fine)
-- [ ] Add account selector and show that different links displays for different accounts
-- [ ] Reusable ShellContext for running remotes in isolation.
-- [ ] Show shell error fallback working when throwing error in remote 1
-- [ ] Show custom error fallback working when throwing in remote 2.
-- [ ] Show error reset working
+- [x] Demo - Show that passing a new prop doesn't break existing remotes (I've already proven this works fine)
+- [x] Support running the remote without the shell displaying via a querystring, but still pass the shell's props to the remote
+- [x] Add account selector and show that different links displays for different accounts
+- [x] Reusable ShellContext for running remotes in isolation.
+- [x] Show shell error fallback working when throwing error in remote 1
+- [x] Show custom error fallback working when throwing in remote 2.
+- [x] Show error reset working
+
+## To Demo
+- [ ] Streamlined remote entry points
+- [ ] Unique entry for remote2 due to custom error boundary at root.
 
 ## TODO
 
+- [ ] Use CRA in Remote
+- [ ] Show shared fetching and caching
+- [ ] Notifications
+- [ ] Internationalization
+- [ ] Remote app framework
+- [ ] Feature flagging
+- [ ] Show lazy loading remote's subroutes
+- [ ] Inter-app communication - Shell provide nav service?
 - [ ] [Handle a remote failing elegantly](https://github.com/coryhouse/shell/issues/1)
-- [ ] Support running the remote without the shell displaying, but still pass the shell's props to the remote
 - [ ] Extract lazy from config so it's just data and fetch before build
 - [ ] Convert webpack config to TypeScript
 - [ ] Read remote config in webpack config
@@ -36,6 +48,20 @@ This repo contains a shell that consumes 2 remotes in separate repos:
 - [ ] Shared webpack/esbuild config
 - [ ] Query example with caching
 - [ ] [ESBuild federation](https://github.com/jacob-ebey/esbuild-federation-example)
+
+## Other key decisions
+
+Key decisions
+Mono vs poly repo -
+Monorepo tooling (Turbo vs NX)
+Routing
+Shared libs - RDS, others?
+Security
+Data fetching
+Deployment - one shell or multiple?
+Error handling
+Logging
+Global state
 
 ## MF Challenges
 

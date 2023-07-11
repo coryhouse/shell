@@ -13,7 +13,7 @@ module.exports = (env, argv) => {
   const isProduction = argv.mode === "production";
 
   return {
-    entry: "./src/index.ts",
+    entry: "./src/index.tsx",
     mode: process.env.NODE_ENV || "development",
     output: {
       // Required for the historyApiFallback setting to work per https://ui.dev/react-router-cannot-get-url-refresh#webpack--development

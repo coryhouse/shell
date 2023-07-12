@@ -29,12 +29,13 @@ This repo contains a shell that consumes 2 remotes in separate repos:
 - [ ] Using CRA in Remote
 - [ ] Unique entry for remote2 due to custom error boundary at root.
 - [ ] Show lazy loading remote's subroutes
+- [ ] List of items to publish via npm below
+- [ ] Internationalization
 
 ## TODO
 
 - [ ] Show shared fetching and caching
 - [ ] Notifications
-- [ ] Internationalization
 - [ ] Remote app framework
 - [ ] Feature flagging
 - [ ] Inter-app communication - Shell provide nav service?
@@ -63,6 +64,13 @@ Deployment - one shell or multiple?
 Error handling
 Logging
 Global state
+
+## To publish in npm package
+
+1. ShellContext (For running remotes in isolation against mocked shell props)
+2. RemoteProps (and the associated child types)
+3. eslint-config-fm-global
+4.
 
 ## MF Challenges
 

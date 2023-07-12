@@ -24,9 +24,11 @@ This repo contains a shell that consumes 2 remotes in separate repos:
 - [x] Show error reset working
 
 ## To Demo
+
 - [ ] Streamlined remote entry points
 - [ ] Using CRA in Remote
 - [ ] Unique entry for remote2 due to custom error boundary at root.
+- [ ] Show lazy loading remote's subroutes
 
 ## TODO
 
@@ -35,7 +37,6 @@ This repo contains a shell that consumes 2 remotes in separate repos:
 - [ ] Internationalization
 - [ ] Remote app framework
 - [ ] Feature flagging
-- [ ] Show lazy loading remote's subroutes
 - [ ] Inter-app communication - Shell provide nav service?
 - [ ] [Handle a remote failing elegantly](https://github.com/coryhouse/shell/issues/1)
 - [ ] Extract lazy from config so it's just data and fetch before build

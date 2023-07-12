@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { remotes } from "./services/remote.service";
+import { Language, languages } from "./types/types";
 
 var buildDate = process.env.BUILD_DATE;
 
@@ -10,6 +11,8 @@ type ShellLayoutProps = {
   setAccount: (account: string) => void;
   count: number;
   setCount: React.Dispatch<React.SetStateAction<number>>;
+  language: Language;
+  setLanguage: (language: Language) => void;
 };
 
 export function ShellLayout({
@@ -18,6 +21,8 @@ export function ShellLayout({
   setAccount,
   count,
   setCount,
+  language,
+  setLanguage,
 }: ShellLayoutProps) {
   return (
     <>
@@ -48,6 +53,19 @@ export function ShellLayout({
         <select value={account} onChange={(e) => setAccount(e.target.value)}>
           <option value="account-one">Account One</option>
           <option value="account-two">Account Two</option>
+        </select>
+
+        <br />
+
+        <select
+          value={language}
+          onChange={(e) => setLanguage(e.target.value as Language)}
+        >
+          {languages.map((language) => (
+            <option key={language} value={language}>
+              {language === "en" ? "English" : "Spanish"}
+            </option>
+          ))}
         </select>
 
         <p>Shell Build Date: {buildDate}</p>

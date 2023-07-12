@@ -10,3 +10,6 @@ export type RemoteProps = {
 
 export type Url = Record<"about" | "home", string>;
 export type User = { id: number; name: string };
+
+export const languages = ["en", "es"] as const;
+export type Language = (typeof languages)[number];

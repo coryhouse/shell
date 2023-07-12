@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { User } from "./types/types";
+import { Language, User } from "./types/types";
 import { getUser } from "./services/user.service";
 import { ShellLayout } from "./ShellLayout";
 import { ShellRoutes } from "./Routes";
@@ -12,6 +12,7 @@ export default function App() {
   const [count, setCount] = useState(0);
   const [user, setUser] = useState<User | null>(null);
   const [account, setAccount] = useState("account-one");
+  const [language, setLanguage] = useState<Language>("en");
   const [searchParams] = useSearchParams();
 
   useEffect(() => {
@@ -26,6 +27,8 @@ export default function App() {
     <>
       {showShell ? (
         <ShellLayout
+          language={language}
+          setLanguage={setLanguage}
           account={account}
           setAccount={setAccount}
           count={count}
@@ -33,13 +36,20 @@ export default function App() {
         >
           <ShellRoutes
             account={account}
+            language={language}
             count={count}
             urls={urls}
             user={user}
           />
         </ShellLayout>
       ) : (
-        <ShellRoutes account={account} count={count} urls={urls} user={user} />
+        <ShellRoutes
+          account={account}
+          language={language}
+          count={count}
+          urls={urls}
+          user={user}
+        />
       )}
     </>
   );

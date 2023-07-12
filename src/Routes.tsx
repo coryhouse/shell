@@ -2,13 +2,14 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { remotes } from "./services/remote.service";
 import { Suspense } from "react";
-import { User } from "./types/types";
+import { Language, User } from "./types/types";
 
 type RoutesProps = {
   count: number;
   account: string;
   urls: Record<"about" | "home", string>;
   user: User;
+  language: Language;
 };
 
 export function ShellRoutes({ count, account, urls, user }: RoutesProps) {

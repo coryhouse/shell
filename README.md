@@ -25,11 +25,11 @@ This repo contains a shell that consumes 2 remotes in separate repos:
 
 ## To Demo
 - [ ] Streamlined remote entry points
+- [ ] Using CRA in Remote
 - [ ] Unique entry for remote2 due to custom error boundary at root.
 
 ## TODO
 
-- [ ] Use CRA in Remote
 - [ ] Show shared fetching and caching
 - [ ] Notifications
 - [ ] Internationalization

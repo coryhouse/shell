@@ -6,6 +6,7 @@ export type RemoteProps = {
   account: string;
   urls: Url;
   user: User;
+  language: Language;
 };
 
 export type Url = Record<"about" | "home", string>;

@@ -12,7 +12,13 @@ type RoutesProps = {
   language: Language;
 };
 
-export function ShellRoutes({ count, account, urls, user }: RoutesProps) {
+export function ShellRoutes({
+  count,
+  account,
+  urls,
+  user,
+  language,
+}: RoutesProps) {
   return (
     <Routes>
       <Route path="/" element={<h2>Home Page</h2>} />
@@ -27,6 +33,7 @@ export function ShellRoutes({ count, account, urls, user }: RoutesProps) {
               <Suspense fallback="Loading...">
                 <LazyRemote
                   shellCount={count}
+                  language={language}
                   account={account}
                   urls={urls}
                   user={user}

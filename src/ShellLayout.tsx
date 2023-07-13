@@ -2,6 +2,8 @@ import { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { remotes } from "./services/remote.service";
 import { Language, languages } from "./types/types";
+import { ErrorBoundary } from "react-error-boundary";
+import { ErrorFallback } from "./ErrorFallback";
 
 var buildDate = process.env.BUILD_DATE;
 
@@ -74,7 +76,11 @@ export function ShellLayout({
           Increment shell count
         </button>
       </header>
-      <main>{children}</main>
+      <main>
+        <ErrorBoundary FallbackComponent={ErrorFallback}>
+          {children}
+        </ErrorBoundary>
+      </main>
     </>
   );
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { remotes } from "./services/remote.service";
 import { Language, languages } from "./types/types";
@@ -6,7 +6,7 @@ import { Language, languages } from "./types/types";
 var buildDate = process.env.BUILD_DATE;
 
 type ShellLayoutProps = {
-  children: React.ReactNode;
+  children: ReactNode;
   account: string;
   setAccount: (account: string) => void;
   count: number;

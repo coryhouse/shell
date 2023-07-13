@@ -31,11 +31,13 @@ This repo contains a shell that consumes 2 remotes in separate repos:
 - [ ] Show lazy loading remote's subroutes
 - [ ] Internationalization
 - [ ] Can omit React imports
+- [ ] Granular error boundaries
+- [ ] [Handle a remote failing elegantly](https://github.com/coryhouse/shell/issues/1)
+- [ ] Enhanced ErrorFallback component
 - [ ] List of items to publish via npm below
 
 ## TODO
 
-- [ ] [Handle a remote failing elegantly](https://github.com/coryhouse/shell/issues/1)
 - [ ] Show shared fetching and caching
 - [ ] Notifications
 - [ ] Remote app framework

@@ -46,7 +46,7 @@ module.exports = (env, argv) => {
                 { targets: { browsers: "last 2 versions" } },
               ],
               "@babel/preset-typescript",
-              "@babel/preset-react",
+              ["@babel/preset-react", { runtime: "automatic" }], // Automatic necessary so we can omit React imports per https://stackoverflow.com/a/64994595/26180
             ],
             plugins: [
               "react-hot-loader/babel",

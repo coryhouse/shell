@@ -29,23 +29,22 @@ This repo contains a shell that consumes 2 remotes in separate repos:
 - [ ] Using CRA in Remote
 - [ ] Unique entry for remote2 due to custom error boundary at root.
 - [ ] Show lazy loading remote's subroutes
-- [ ] List of items to publish via npm below
 - [ ] Internationalization
 - [ ] Can omit React imports
+- [ ] List of items to publish via npm below
 
 ## TODO
 
+- [ ] [Handle a remote failing elegantly](https://github.com/coryhouse/shell/issues/1)
 - [ ] Show shared fetching and caching
 - [ ] Notifications
 - [ ] Remote app framework
 - [ ] Feature flagging
 - [ ] Inter-app communication - Shell provide nav service?
-- [ ] [Handle a remote failing elegantly](https://github.com/coryhouse/shell/issues/1)
 - [ ] Extract lazy from config so it's just data and fetch before build
 - [ ] Convert webpack config to TypeScript
 - [ ] Read remote config in webpack config
 - [ ] Implement remote registry.
-- [ ] Unify remote props via common type
 - [ ] Each remote provides a manifest file that contains meta about its props and how to import it. Or, each remote's types be read or generated?
 - [ ] Shared webpack/esbuild config
 - [ ] Query example with caching

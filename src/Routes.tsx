@@ -2,6 +2,8 @@ import { Route, Routes } from "react-router-dom";
 import { remotes } from "./services/remote.service";
 import { Suspense } from "react";
 import { Language, User } from "./types/types";
+import { ErrorBoundary } from "react-error-boundary";
+import { ErrorFallback } from "./ErrorFallback";
 
 type RoutesProps = {
   count: number;
@@ -29,16 +31,26 @@ export function ShellRoutes({
             key={navLink.path}
             path={navLink.path + "/*"}
             element={
-              <Suspense fallback="Loading...">
-                <LazyRemote
-                  shellCount={count}
-                  language={language}
-                  account={account}
-                  urls={urls}
-                  user={user}
-                  baseUrl={navLink.path}
-                />
-              </Suspense>
+              <ErrorBoundary
+                fallbackRender={(props) => (
+                  <ErrorFallback
+                    {...props}
+                    message={`Oops! ${navLink.text} is unavailable.`}
+                    hardReloadWhenTryAgainIsClicked
+                  />
+                )}
+              >
+                <Suspense fallback="Loading...">
+                  <LazyRemote
+                    shellCount={count}
+                    language={language}
+                    account={account}
+                    urls={urls}
+                    user={user}
+                    baseUrl={navLink.path}
+                  />
+                </Suspense>
+              </ErrorBoundary>
             }
           />
         );

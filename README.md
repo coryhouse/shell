@@ -31,6 +31,7 @@ This repo contains a shell that consumes 2 remotes in separate repos:
 - [ ] Show lazy loading remote's subroutes
 - [ ] List of items to publish via npm below
 - [ ] Internationalization
+- [ ] Can omit React imports
 
 ## TODO
 
@@ -44,7 +45,6 @@ This repo contains a shell that consumes 2 remotes in separate repos:
 - [ ] Convert webpack config to TypeScript
 - [ ] Read remote config in webpack config
 - [ ] Implement remote registry.
-- [ ] Eliminate need for importing React
 - [ ] Unify remote props via common type
 - [ ] Each remote provides a manifest file that contains meta about its props and how to import it. Or, each remote's types be read or generated?
 - [ ] Shared webpack/esbuild config

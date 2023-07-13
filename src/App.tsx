@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Language, User } from "./types/types";
 import { getUser } from "./services/user.service";
 import { ShellLayout } from "./ShellLayout";

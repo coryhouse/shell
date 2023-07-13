@@ -1,4 +1,3 @@
-import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { remotes } from "./services/remote.service";
 import { Suspense } from "react";

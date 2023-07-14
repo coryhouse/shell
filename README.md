@@ -13,6 +13,8 @@ This repo contains a shell that consumes 2 remotes in separate repos:
 
 1. Show release flow with breaking changes
 
+## To Demo
+
 ## Already Demo'd
 
 - [x] Demo - Show that passing a new prop doesn't break existing remotes (I've already proven this works fine)
@@ -22,22 +24,22 @@ This repo contains a shell that consumes 2 remotes in separate repos:
 - [x] Show shell error fallback working when throwing error in remote 1
 - [x] Show custom error fallback working when throwing in remote 2.
 - [x] Show error reset working
-
-## To Demo
-
-- [ ] Streamlined remote entry points
-- [ ] Using CRA in Remote
-- [ ] Unique entry for remote2 due to custom error boundary at root.
-- [ ] Show lazy loading remote's subroutes
-- [ ] Internationalization
-- [ ] Can omit React imports
-- [ ] Granular error boundaries
-- [ ] [Handle a remote failing elegantly](https://github.com/coryhouse/shell/issues/1)
-- [ ] Enhanced ErrorFallback component
-- [ ] List of items to publish via npm below
+- [x] Streamlined remote entry points
+- [x] Using CRA as Remote
+- [x] Unique entry for remote2 due to custom error boundary at root.
+- [x] Show lazy loading remote's subroutes
+- [x] Internationalization
+- [x] Can omit React imports
+- [x] Granular error boundaries
+- [x] [Handle a remote failing elegantly](https://github.com/coryhouse/shell/issues/1)
+- [x] Enhanced ErrorFallback component
+- [x] List of items to publish via npm below
 
 ## TODO
 
+- [ ] Fix this: Loading indicators only showing for first link
+- [ ] Document converting CRA to be a remote
+- [ ] Using NX as Remote
 - [ ] Show shared fetching and caching
 - [ ] Notifications
 - [ ] Remote app framework
@@ -50,6 +52,7 @@ This repo contains a shell that consumes 2 remotes in separate repos:
 - [ ] Each remote provides a manifest file that contains meta about its props and how to import it. Or, each remote's types be read or generated?
 - [ ] Shared webpack/esbuild config
 - [ ] Query example with caching
+- [ ] https://github.com/originjs/vite-plugin-federation
 - [ ] [ESBuild federation](https://github.com/jacob-ebey/esbuild-federation-example)
 
 ## Other key decisions
